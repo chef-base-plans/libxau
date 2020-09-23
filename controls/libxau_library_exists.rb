@@ -17,7 +17,6 @@ control 'core-plans-libxau-library-exists' do
   describe plan_installation_directory do
     its('exit_status') { should eq 0 }
     its('stdout') { should_not be_empty }
-    # TODO: REMOVE ME # its('stderr') { should be_empty }
   end
 
   library_filename = input('library_filename', value: 'libXau.so')
@@ -34,6 +33,5 @@ control 'core-plans-libxau-library-exists' do
     its('exit_status') { should eq 0 }
     its('stdout') { should_not be_empty }
     its('stdout') { should match /Version:\s+#{plan_pkg_version}/ }
-    # TODO: REMOVE ME # its('stderr') { should be_empty }
   end
 end
